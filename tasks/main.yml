@@ -1,2 +1,17 @@
 ---
-# tasks file for template
+- name: get the dependencies
+  include: "dependencies.yml"
+
+#- name: install textadept from source
+#  include: "build.yml"
+
+- name: install textadept from binary
+  include: "binary.yml"
+
+- name: install textadept modules
+  include: "modules.yml"
+
+- name: install userhome textadept modules
+  include: "userhome.yml"
+  become: "{{ user.name }}"
+

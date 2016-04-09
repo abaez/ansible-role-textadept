@@ -1,0 +1,23 @@
+---
+- name: clone mitchel's modules
+  hg:
+    repo=http://foicica.com/hg/textadept_modules/
+    dest="{{ dir.tool }}/textadept-modules"
+
+- name: link to mitchel's modules
+  file:
+    src="{{ dir.tool }}/textadept-modules/{{ item }}"
+    dest="{{ ta.src }}/modules/{{ item }}"
+    state=link
+  with_items:
+    - css
+    - html
+    - python
+    - rest
+    - ruby
+    - yaml
+
+- name: clone go module
+  git:
+    repo=https://github.com/rgieseke/textadept-go.git
+    dest="{{ ta.src }}/modules/go"

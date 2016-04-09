@@ -1,0 +1,16 @@
+---
+- name: source dependencies
+  yum: name={{ item }} state=latest
+  with_items:
+    - gcc
+    - gcc-c++
+    - automake
+    - ncurses-devel
+    - unzip
+    - patch
+
+- name: dvcs requirements
+  yum: name={{ item }} state=latest
+  with_items:
+    - mercurial
+    - git

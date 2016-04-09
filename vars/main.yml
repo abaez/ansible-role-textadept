@@ -1,2 +1,5 @@
 ---
-# vars file for template
+ta:
+  version: textadept_8.6
+  src: /usr/local/share/textadept
+  home: "{{ user.home }}/.textadept"

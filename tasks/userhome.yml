@@ -1,0 +1,51 @@
+---
+- name: make ta home
+  hg:
+    repo=https://bitbucket.org/a_baez/ta-userhome
+    dest="{{ ta.home }}"
+
+- name: get ta lexers module
+  hg:
+    repo=https://bitbucket.org/a_baez/ta-lexers
+    dest="{{ ta.home }}/lexers"
+
+- name: make module directory
+  file:
+    dest="{{ ta.home }}/modules"
+    state=directory
+
+- name: get ta common module
+  hg:
+    repo=https://bitbucket.org/a_baez/ta-common
+    dest="{{ ta.home }}/modules/common"
+
+- name: get ta extend module
+  hg:
+    repo=https://bitbucket.org/a_baez/ta-extend
+    dest="{{ ta.home }}/modules/extend"
+
+- name: get ta moonscript module
+  hg:
+    repo=https://bitbucket.org/a_baez/ta-moonscript
+    dest="{{ ta.home }}/modules/moonscript"
+
+- name: get ta rust module
+  hg:
+    repo=https://bitbucket.org/a_baez/ta-rust
+    dest="{{ ta.home }}/modoules/rust"
+
+- name: get ta hastebin module
+  hg:
+    repo=https://bitbucket.org/a_baez/ta-hastebin
+    dest="{{ ta.home }}/modules/hastebin"
+
+- name: get ta lapis module
+  hg:
+    repo=https://bitbucket.org/a_baez/ta-lapis
+    dest="{{ ta.home }}/modules/lapis"
+
+- name: get ta love module
+  hg:
+    repo=https://bitbucket.org/a_baez/ta-love
+    dest="{{ ta.home }}/modules/love"
+

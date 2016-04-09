@@ -1,0 +1,39 @@
+---
+- name: clone textadept
+  hg:
+    repo=http://foicica.com/hg/textadept
+    dest="{{ dir.tmp }}/textadept"
+    revision={{ ta.version }}
+
+- name: textadept make deps
+  command: make deps NIGHTLY=1
+  args:
+    chdir: "{{ dir.tmp }}/textadept/src"
+    #creates: "{{ dir.tmp }}/textadept/src/scintilla/"
+
+- name: textadept make build
+  command: make curses
+  args:
+    chdir: "{{ dir.tmp }}/textadept/src"
+
+- name: remove old install
+  file:
+    path={{ item }}
+    state=absent
+  with_items:
+    - "{{ ta.src }}"
+    - /usr/local/bin/textadept
+    - /usr/local/bin/textadept-curses
+    - /usr/local/bin/textadeptjit-curses
+
+- name: textadept make install
+  always_run: yes
+  command: make curses install
+  args:
+    chdir: "{{ dir.tmp }}/textadept/src"
+
+- name: link textadept ncurses
+  file:
+    src="{{ ta.src }}/textadept-curses"
+    dest="/usr/local/bin/textadept"
+    state=link
