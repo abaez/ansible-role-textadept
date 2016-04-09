@@ -1,5 +1,11 @@
 ---
+user:
+  name: someone
+  home: /home/someone
+
 ta:
   version: textadept_8.6
   src: /usr/local/share/textadept
   home: "{{ user.home }}/.textadept"
+
+
