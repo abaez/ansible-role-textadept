@@ -32,7 +32,7 @@
 - name: get ta rust module
   hg:
     repo=https://bitbucket.org/a_baez/ta-rust
-    dest="{{ ta.home }}/modoules/rust"
+    dest="{{ ta.home }}/modules/rust"
 
 - name: get ta hastebin module
   hg:

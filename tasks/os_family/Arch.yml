@@ -1,5 +1,13 @@
 ---
-- name: source dependencies
+- name: src depends
+  pacman: name={{ item }} state=latest
+  with_items:
+    - lua
+    - gtk2
+    - curl
+    - wget
+
+- name: source build dependencies
   pacman: name={{ item }} state=latest
   with_items:
     - gcc
