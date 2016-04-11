@@ -13,7 +13,16 @@ I tend to use [Textadept][4] for quite a number of choices in text editing. It's
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+A couple of variables to note for use:
+
+* ta: holds textadept configurations
+  * src: the location for  the textadept install
+  * version: the version of textadept to install
+
+* user: holds user information
+  * name: the name of the user for the provisioned client.
+  * home: home of the user.
+
 
 Requirements
 ------------
