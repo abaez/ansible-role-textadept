@@ -1,0 +1,15 @@
+---
+- name: source dependencies
+  pacman: name={{ item }} state=latest
+  with_items:
+    - gcc
+    - automake
+    - ncurses
+    - unzip
+    - patch
+
+- name: dvcs requirements
+  pacman: name={{ item }} state=latest
+  with_items:
+    - mercurial
+    - git
