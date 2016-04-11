@@ -23,21 +23,15 @@ A couple of variables to note for use:
   * name: the name of the user for the provisioned client.
   * home: home of the user.
 
-
-Requirements
-------------
-
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
-
 Usage
 -----
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+The role is simple enough to use. First make sure you change the role variables listed above. After you can simply append to your playbook wherever you wish:
 
 ``` yaml
 - hosts: servers
     roles:
-        - { role: username.rolename, x: 42 }
+        - textadept
 ```
 
 Author Information
