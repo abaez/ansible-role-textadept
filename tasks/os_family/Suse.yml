@@ -1,0 +1,16 @@
+---
+- name: source dependencies
+  zypper: name={{ item }} state=latest
+  with_items:
+    - gcc
+    - gcc-c++
+    - automake
+    - ncurses-devel
+    - unzip
+    - patch
+
+- name: dvcs requirements
+  zypper: name={{ item }} state=latest
+  with_items:
+    - mercurial
+    - git

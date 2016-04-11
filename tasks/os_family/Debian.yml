@@ -1,0 +1,16 @@
+---
+- name: source dependencies
+  apt: name={{ item }} state=latest
+  with_items:
+    - gcc
+    - g++
+    - automake
+    - libncurses5-dev
+    - unzip
+    - patch
+
+- name: dvcs requirements
+  apt: name={{ item }} state=latest
+  with_items:
+    - mercurial
+    - git
