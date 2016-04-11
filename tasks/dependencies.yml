@@ -1,6 +1,5 @@
 ---
-- name: Check for RedHat based
-  include: "os_family/RedHat.yml"
-  when: ansible_os_family == "RedHat"
+- name: Check for os based
+  include: "os_family/{{ ansible_os_family }}.yml"
 
 
